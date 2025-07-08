@@ -31,7 +31,7 @@ jobs:
         uses: actions/checkout@v4
       # This step creates the Checkmarx One scan
       - name: Checkmarx One scan
-        uses: checkmarx/ast-github-action@ef93013c95adc60160bc22060875e90800d3ecfc
+        uses: checkmarx/ast-github-action@832b464fedc2d5da30ff9952e96f601a7b9179b84b957d028f29050f4200e2cd
         with:
           base_uri: ${{ secrets.CX_BASE_URI }} 
           cx_client_id: ${{ secrets.CX_CLIENT_ID }} 
