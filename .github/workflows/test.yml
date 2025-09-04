@@ -1,0 +1,33 @@
+name: Checkmarx Scan
+
+on:
+  push:
+    branches:
+    - main
+    - master
+
+jobs:
+  run_checkmarx:
+    permissions:
+      contents: read
+      security-events: write
+      actions: read
+    runs-on: ubuntu-latest
+    steps:
+        # Checks out the GitHub repository to GITHUB_WORKSPACE so that subsequent steps could act on it
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Checkmarx One CLI Action
+        uses: checkmarx/ast-github-action@main #Github Action version
+        with:
+          project_name: ${{ github.repository }}
+          cx_tenant: sng_automation_tenant
+          base_uri: https://sng.ast.checkmarx.net
+          cx_client_id:  gh_action
+          cx_client_secret: vEmJsSbLzO928v9Pbm6dfxE2eLGWl88J
+          additional_params: --report-format sarif --output-path .
+      - name: Upload Checkmarx SARIF File
+        uses: actions/upload-artifact@v4
+        with:
+          name: Checkmarx Report
+          file: cx_result.sarif
