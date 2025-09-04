@@ -25,7 +25,7 @@ jobs:
           base_uri: https://sng.ast.checkmarx.net
           cx_client_id:  gh_action
           cx_client_secret: vEmJsSbLzO928v9Pbm6dfxE2eLGWl88J
-          additional_params: --report-format sarif --output-path .
+          additional_params: --report-format sarif --output-path . --output-name cx_results
       - name: Upload Checkmarx SARIF File
         uses: actions/upload-artifact@v4
         with:
