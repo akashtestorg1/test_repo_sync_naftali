@@ -26,8 +26,9 @@ jobs:
           cx_client_id:  gh_action
           cx_client_secret: vEmJsSbLzO928v9Pbm6dfxE2eLGWl88J
           additional_params: --report-format sarif --output-path . --output-name cx_results
+
       - name: Upload Checkmarx SARIF File
         uses: actions/upload-artifact@v4
         with:
           name: Checkmarx Report
-          file: cx_result.sarif
+          path: cx_results.sarif
