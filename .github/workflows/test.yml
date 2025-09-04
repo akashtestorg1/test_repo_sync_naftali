@@ -21,10 +21,10 @@ jobs:
         uses: checkmarx/ast-github-action@main #Github Action version
         with:
           project_name: ${{ github.repository }}
-          cx_tenant: sng_automation_tenant
-          base_uri: https://sng.ast.checkmarx.net
-          cx_client_id:  gh_action
-          cx_client_secret: vEmJsSbLzO928v9Pbm6dfxE2eLGWl88J
+          cx_tenant: test_naftali
+          base_uri: https://eu.ast.checkmarx.net
+          cx_client_id: Akash_action
+          cx_client_secret: XKeZTGjuBjQQOVhfQyxZAuDb2ydtA64I
           additional_params: --report-format sarif --output-path . --output-name cx_results
 
       - name: Upload Checkmarx SARIF report
