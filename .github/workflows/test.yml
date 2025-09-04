@@ -27,8 +27,7 @@ jobs:
           cx_client_secret: vEmJsSbLzO928v9Pbm6dfxE2eLGWl88J
           additional_params: --report-format sarif --output-path . --output-name cx_results
 
-      - name: Upload Checkmarx SARIF File
-        uses: actions/upload-artifact@v4
+      - name: Upload Checkmarx SARIF report
+        uses: github/codeql-action/upload-sarif@v3
         with:
-          name: Checkmarx Report
-          path: cx_results.sarif
+          sarif_file: cx_results.sarif
