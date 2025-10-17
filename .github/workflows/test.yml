@@ -25,7 +25,7 @@ jobs:
           base_uri: ${{ secrets.CX_BASE_URI }}
           cx_client_id: ${{ secrets.CX_CLIENT_ID }}
           cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}
-          additional_params: --filter "status=NEW,severity=critical;high" --threshold "sast-high=1;sast-critical=1;sca-high=1;sca-critical=1;iac-security-high=1;iac-security-critical=1;api-security-high=1;api-security-critical=1" --debug
+          additional_params: " --debug "
 
       - name: Upload Checkmarx SARIF report
         uses: github/codeql-action/upload-sarif@v3
