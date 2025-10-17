@@ -9,7 +9,11 @@
    
   }
   "dependencies": {
-    "styled-components": "5.3.6"
+    "styled-components": "5.1.6",
+    "husky": "4.1.1",
+    "prettier": "1.0.1",
+    "pretty-quick": "2.0.0",
+    "lerna": "2.21.1"
   }
   "workspaces": ["packages/*"],
   "husky": {
