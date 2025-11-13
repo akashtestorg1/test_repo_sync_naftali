@@ -1,6 +1,6 @@
 ![theme](./theme.png)
 12
-![components](./components.png)
+![components](./components.png)123
 
 # What is Pal.js UI?6
 
