@@ -30,7 +30,7 @@ jobs:
           base_uri: ${{ secrets.CX_BASE_URI }}
           cx_client_id: ${{ secrets.CX_CLIENT_ID }}
           cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}
-          additional_params: "--scan-types iac-security --threshod iac-security-low=1 --debug"
+          additional_params: "--scan-types iac-security --threshold iac-security-low=1 --debug"
 
       - name: Upload Checkmarx SARIF report
         uses: github/codeql-action/upload-sarif@v3
