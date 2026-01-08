@@ -19,7 +19,7 @@ jobs:
       actions: read
     runs-on: ubuntu-latest
     steps:
-        # Checks out the GitHub repository to GITHUB_WORKSPACE so that subsequent steps could act on it
+        # Checks out the GitHub repository to GITHUB_WORKSPACE so that subsequent steps could act on 
       - name: Checkout
         uses: actions/checkout@v4
       - name: Checkmarx One CLI Action
