@@ -25,7 +25,7 @@ jobs:
       - name: Checkmarx One CLI Action
         uses: checkmarx/ast-github-action@2.3.30 #Github Action version
         with:
-          project_name: ${{ github.repository }}
+          project_name: incremental_test
           cx_tenant: ${{ secrets.CX_TENANT }}
           base_uri: ${{ secrets.CX_BASE_URI }}
           cx_client_id: ${{ secrets.CX_CLIENT_ID }}
