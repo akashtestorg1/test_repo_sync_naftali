@@ -25,12 +25,13 @@ jobs:
       - name: Checkmarx One CLI Action
         uses: checkmarx/ast-github-action@main #Github Action version
         with:
-          project_name: incremental_test
+          project_name: ${{ github.event.repository.clone_url }}
           cx_tenant: ${{ secrets.CX_TENANT }}
           base_uri: ${{ secrets.CX_BASE_URI }}
           cx_client_id: ${{ secrets.CX_CLIENT_ID }}
           cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}
-          additional_params: "--scan-types sast --sast-incremental=true"
+          additional_params: --scan-types sast
+          
 
       - name: Upload Checkmarx SARIF report
         uses: github/codeql-action/upload-sarif@v3
