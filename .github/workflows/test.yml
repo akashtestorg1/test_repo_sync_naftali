@@ -17,7 +17,7 @@ jobs:
       contents: read
       security-events: write
       actions: read
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted,linux]
     steps:
         # Checks out the GitHub repository to GITHUB_WORKSPACE so that subsequent steps could act
       - name: Checkout
@@ -30,7 +30,7 @@ jobs:
           base_uri: ${{ secrets.CX_BASE_URI }}
           cx_client_id: ${{ secrets.CX_CLIENT_ID }}
           cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}
-          additional_params: --sast-preset-name "ASA Premium" --scan-types sast
+          scan_params: "--debug"
           
 
       - name: Upload Checkmarx SARIF report
