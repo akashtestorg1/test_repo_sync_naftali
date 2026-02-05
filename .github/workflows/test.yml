@@ -17,7 +17,7 @@ jobs:
       contents: read
       security-events: write
       actions: read
-    runs-on: [self-hosted]
+    runs-on: self-hosted
     steps:
         # Checks out the GitHub repository to GITHUB_WORKSPACE so that subsequent steps could act
       - name: Checkout
